@@ -1,0 +1,17 @@
+{
+  "repo": "vector-trace-incident-grid",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 5,
+    "ship": 203,
+    "watch": 109
+  },
+  "terms": [
+    "span volume",
+    "latency skew",
+    "signal loss",
+    "incident shape"
+  ]
+}
