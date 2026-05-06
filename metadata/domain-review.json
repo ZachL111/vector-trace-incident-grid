@@ -1,0 +1,73 @@
+{
+  "repo": "vector-trace-incident-grid",
+  "language": "Scala",
+  "category": "Observability",
+  "goal": "Package a Scala local lab for incident analysis with transition tables, invalid-transition tests, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "span volume",
+      "latency skew",
+      "signal loss",
+      "incident shape"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "span volume",
+      "signal": 73,
+      "slack": 20,
+      "drag": 24,
+      "confidence": 85,
+      "score": 179,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "latency skew",
+      "signal": 52,
+      "slack": 20,
+      "drag": 13,
+      "confidence": 55,
+      "score": 140,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "signal loss",
+      "signal": 57,
+      "slack": 46,
+      "drag": 10,
+      "confidence": 47,
+      "score": 177,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "incident shape",
+      "signal": 76,
+      "slack": 54,
+      "drag": 17,
+      "confidence": 70,
+      "score": 225,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "span volume",
+      "signal": 60,
+      "slack": 26,
+      "drag": 13,
+      "confidence": 63,
+      "score": 170,
+      "lane": "ship"
+    }
+  ]
+}
